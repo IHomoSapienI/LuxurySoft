@@ -1,0 +1,693 @@
+/* ==========================================================================
+   1. ESTILOS GLOBALES Y RESET
+   ========================================================================== */
+
+/* Reset global para la página de recuperación de contraseña */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* Estilos cuando la página está activa - evita el scroll */
+html.verify-page-active,
+body.verify-page-active {
+  overflow: hidden !important;
+}
+
+.verify-app-container {
+  overflow: hidden !important;
+  height: 100vh !important;
+}
+
+/* ==========================================================================
+   2. ESTILOS DE DISEÑO Y CONTENEDORES
+   ========================================================================== */
+
+/* Contenedor principal para la página de olvidó contraseña */
+.verify-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: #ffe6ea; /* Fondo rosa suave */
+  box-sizing: border-box;
+  padding-top: 5vh;
+}
+
+/* Superposición de gradiente radial para profundidad */
+.verify-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 192, 203, 0.1) 0%, rgba(255, 192, 203, 0) 70%);
+  z-index: 0;
+}
+
+/* Contenedor de fondo */
+.verify-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Patrón de fondo para interés visual */
+.background-pattern-verify {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(45deg, rgba(255, 182, 193, 0.05) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255, 182, 193, 0.05) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(255, 182, 193, 0.05) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(255, 182, 193, 0.05) 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+/* ==========================================================================
+   3. ESTILOS DE TARJETA Y CONTENIDO
+   ========================================================================== */
+
+/* Contenedor principal de la tarjeta */
+.verify-card {
+  width: 100%;
+  max-width: 1000px;
+  height: 500px;
+  max-height: 90vh;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(219, 112, 147, 0.15);
+  display: flex;
+  overflow: hidden;
+  z-index: 1;
+  position: relative;
+  border: 1px solid rgba(255, 182, 193, 0.3);
+  margin: 0;
+}
+
+/* Efecto de borde brillante */
+.verify-card::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ffb6c1, #db7093, #ffb6c1);
+  z-index: -1;
+  border-radius: 22px;
+  opacity: 0.5;
+  filter: blur(8px);
+}
+
+/* Área de contenido de la tarjeta */
+.verify-content {
+  flex: 1;
+  padding: 1.5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Contenedor de encabezado para el logo */
+.header-container-verify {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.welcome-text-verify {
+  font-size: 1.4rem;
+  font-weight: 100;
+  color: #000000;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+
+/* Contenedor del logo */
+.logo-container-verify {
+  font-size: 1.4rem;
+  font-weight: 100;
+  color: #000000;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Imagen del logo */
+.logo-image-verify {
+  width: auto;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: -1rem;
+}
+
+/* Texto del logo con gradiente */
+.logo-text {
+  font-size: 2rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #db7093, #ff69b4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  margin: 0;
+}
+
+/* ==========================================================================
+   4. ESTILOS DE FORMULARIO
+   ========================================================================== */
+
+/* Contenedor del formulario */
+.form-container-verify {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 85px;
+  overflow: hidden;
+}
+
+/* Contenedor del grupo de entrada */
+.input-group-verify {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+/* Estilo de entrada del formulario */
+.form-input-verify {
+  width: 100%;
+  padding: 0.9rem;
+  border: 2px solid #ff69b4;
+  border-radius: 10px 10px 10px 10px; 
+  font-size: 1rem;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  background: transparent;
+  box-sizing: border-box;
+  padding: 7px 0.40rem;
+  font-weight: 500;
+  color: #000000;
+}
+
+/* Estado de enfoque de la entrada */
+.form-input-verify:focus {
+  border-color: #db7093;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(219, 112, 147, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Etiqueta flotante */
+.input-label-verify {
+  position: absolute;
+  left: 1rem;
+  top: 10px;
+  color: #718096;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  background: transparent;
+  padding: 0 0.30rem;
+  font-weight: 500;
+  transform-origin: left top;
+}
+
+/* Animación de etiqueta flotante */
+.form-input-verify:focus ~ .input-label-verify,
+.form-input-verify:not(:placeholder-shown) ~ .input-label-verify {
+  transform: translateY(-1.9rem) scale(0.85);
+  color: #82285b;
+  font-weight: 600;
+}
+
+
+/* Texto de instrucciones */
+.instruction-text-verify {
+  color: #4a5568;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Mensaje de error */
+.error-message {
+  background: #fff5f5;
+  color: #e53e3e;
+  padding: 0.8rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  border: 1px solid #feb2b2;
+  font-weight: 500;
+}
+
+/* Mensaje de éxito */
+.success-message {
+  background: #f0fff4;
+  color: #38a169;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  border: 1px solid #c6f6d5;
+  text-align: center;
+}
+
+/* ==========================================================================
+   5. ESTILOS DE BOTONES Y ELEMENTOS INTERACTIVOS
+   ========================================================================== */
+
+/* Botón principal */
+.verify-button {
+  width: 100%;
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(135deg, #db7093, #ff69b4);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.5px;
+}
+
+/* Estado hover del botón */
+.verify-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(219, 112, 147, 0.2);
+}
+
+/* Estado deshabilitado del botón */
+.verify-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Efecto de brillo del botón */
+.verify-button::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(45deg);
+  animation: shine 3s infinite;
+}
+
+/* Spinner de carga */
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+}
+
+.loader-circle {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Contenedor de opciones adicionales */
+.additional-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+/* Enlace de opción */
+.option-link-verify {
+  display: flex;
+  text-align: center;
+  margin-top: 15px;
+  color: #718096;
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  padding: 0.0rem 0.7rem;
+  border-radius: 8px;
+}
+
+.option-link-verify:hover{
+  color: #ff69b4;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+/* ==========================================================================
+   6. ELEMENTOS DECORATIVOS
+   ========================================================================== */
+
+/* Panel lateral decorativo */
+.verify-decoration {
+  flex: 1;
+  background: linear-gradient(135deg, #ffb6c1, #db7093);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Superposición de patrón para decoración */
+.verify-decoration::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='rgba(255,255,255,.1)' fill-rule='evenodd'/%3E%3C/svg%3E"),
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 20%),
+    radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 20%);
+}
+
+/* Contenido decorativo */
+.decoration-content-verify {
+  color: white;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* Título decorativo */
+.decoration-title-verify {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Texto decorativo */
+.decoration-text-verify {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 0;
+  max-width: 80%;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   7. MEDIA QUERIES
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  /* Ajustes de tarjeta para móvil */
+  .verify-card {
+    flex-direction: column;
+    height: auto;
+    max-height: 90vh;
+    margin: 0 1rem;
+  }
+
+  /* Ocultar decoración en móvil */
+  .verify-decoration {
+    display: none;
+  }
+
+  /* Ajustar relleno de contenido */
+  .verify-content {
+    padding: 1.2rem;
+  }
+
+  /* Formulario a ancho completo */
+  .form-container-verify {
+    max-width: 100%;
+  }
+
+  /* Ajustar relleno del contenedor */
+  .verify-container {
+    padding-top: 3vh;
+    align-items: flex-start;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* Ajustar espaciado del encabezado */
+  .header-container-verify {
+    margin-bottom: 1rem;
+  }
+
+  /* Logo más pequeño */
+  .logo-image {
+    height: 100px;
+  }
+}
+
+/* ==========================================================================
+   8. ANIMACIONES
+   ========================================================================== */
+
+/* Animación de giro para el loader */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Efecto de brillo para botón */
+@keyframes shine {
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+  20% {
+    left: 100%;
+    opacity: 0.6;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+/* Añadir al final del archivo VerifyToken.css */
+
+/* Estilos para el contenedor de inputs de código */
+.verification-code-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+/* Estilos para cada input de código */
+.verification-code-input {
+  width: 50px;
+  height: 60px;
+  margin-top: -45px;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  background-color: #f8fafc;
+  color: #334155;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  caret-color: #ff69b4;
+}
+
+.verification-code-input:focus {
+  border-color: #f63be3;
+  box-shadow: 0 0 0 3px #ff69b44d;
+  outline: none;
+  transform: translateY(-2px);
+}
+
+.verification-code-input:hover {
+  border-color: #cbd5e1;
+}
+
+/* Estilo para resaltar el email */
+.email-highlight {
+  display: block;
+  font-weight: 600;
+  color: #ff69b4;
+  background-color: #f0f9ff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin: 10px auto;
+  max-width: fit-content;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* SweetAlert2 Personalizado */
+.swal-container {
+  font-family: "Poppins", sans-serif;
+}
+
+.swal-popup {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  max-width: 450px;
+  width: 90%;
+}
+
+.swal-title {
+  font-size: 1.75rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.swal-content {
+  padding: 1rem 0;
+  font-size: 1rem;
+}
+
+.swal-confirm-button {
+  padding: 0.75rem 1.5rem !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  border-radius: 0.5rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease !important;
+}
+
+.swal-confirm-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Estilos para mensajes de error */
+.text-error {
+  color: #e11d48;
+}
+
+.swal-error-message {
+  font-size: 1.05rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* Estilos para mensajes de éxito */
+.text-success {
+  color: #10b981;
+}
+
+.swal-success-content {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.swal-success-message {
+  font-size: 1.05rem;
+  color: #334155;
+  margin-bottom: 0.5rem;
+}
+
+.swal-instruction {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin-top: 0.5rem;
+}
+
+/* Estilos para alerta de carga */
+.swal-loading-message {
+  font-size: 1rem;
+  color: #64748b;
+  margin-top: 1rem;
+}
+
+/* Añadir animate.css básico para animaciones */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.8, 0.8, 0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes zoomOut {
+  from {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+  to {
+    opacity: 0;
+    transform: scale3d(0.8, 0.8, 0.8);
+  }
+}
+
+.animate__animated {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+
+.animate__faster {
+  animation-duration: 0.3s;
+}
+
+.animate__fadeInDown {
+  animation-name: fadeInDown;
+}
+
+.animate__fadeOutUp {
+  animation-name: fadeOutUp;
+}
+
+.animate__zoomIn {
+  animation-name: zoomIn;
+}
+
+.animate__zoomOut {
+  animation-name: zoomOut;
+}

@@ -1,0 +1,41 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin" // Asegúrate de que este plugin de Flutter esté al final
+}
+
+android {
+    namespace = "com.example.mobile" // Ajusta el namespace para tu aplicación
+    compileSdk = 34 // Usa el SDK de Android correcto que estás utilizando
+    ndkVersion = "25.1.8937393"  // Esta versión debe ser compatible con tu SDK
+
+    defaultConfig {
+        applicationId = "com.example.mobile"  // ID de la aplicación, que debe ser único
+        minSdk = 21 // Esto debería estar configurado a 21 o mayor, dependiendo de tu necesidad
+        targetSdk = 34 // Debería coincidir con la versión de tu SDK de Android
+        versionCode = 1 // Incrementa el versionCode para cada versión de tu app
+        versionName = "1.0.0" // Nombre de la versión
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8 // Esto es necesario para compatibilidad con versiones de Java 8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8" // Asegúrate de que Kotlin esté configurado para Java 8
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.debug // Configura las claves de firma para el build de release
+        }
+    }
+}
+
+flutter {
+    source = "../.." // Ajusta la ruta de Flutter a tu proyecto
+}
+
+
+

@@ -1,0 +1,119 @@
+/* Gradientes optimizados con CSS en lugar de inline styles */
+.hero-gradient {
+  background: linear-gradient(45deg, #ff69b4, #da70d6);
+}
+
+.cta-gradient {
+  background: linear-gradient(to right, #ff69b4, #da70d6);
+}
+
+/* Animación optimizada para las burbujas */
+.bubble {
+  transform: translate(-50%, -50%);
+  animation: float 8s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) translateY(0px);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-20px);
+  }
+}
+
+/* Optimizaciones para dispositivos móviles */
+@media (max-width: 768px) {
+  .bubble {
+    /* Reducir la complejidad de la animación en móviles */
+    animation-duration: 10s;
+  }
+
+  /* Asegurar que las imágenes no sean demasiado grandes en móviles */
+  img {
+    max-height: 50vh;
+  }
+}
+
+/* Optimizaciones para el slider */
+.slider-container {
+  contain: content;
+}
+
+/* Optimizaciones para el rendimiento general */
+* {
+  text-rendering: optimizeSpeed;
+}
+
+/* Prevenir saltos de contenido durante la carga */
+.aspect-\[6\/3\] {
+  aspect-ratio: 6 / 3;
+  contain: strict;
+}
+
+/* Estilos para las tarjetas de servicios */
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Estilos para las tarjetas de testimonios */
+.testimonial-card {
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.03);
+}
+
+/* Estilos para las tarjetas de membresía */
+.membership-card {
+  transition: all 0.3s ease;
+}
+
+.membership-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Animación para el contador de tiempo */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.time-counter {
+  animation: pulse 2s infinite;
+}
+
+/* Estilos para las preguntas frecuentes */
+.faq-item {
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  background-color: rgba(255, 105, 180, 0.05);
+}
+
+/* Estilos para los iconos de redes sociales */
+.social-icon {
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-5px);
+}
+
+/* Optimizaciones para dispositivos de alta densidad de píxeles */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .hero-gradient {
+    background-image: linear-gradient(45deg, #ff69b4, #da70d6);
+  }
+}
+

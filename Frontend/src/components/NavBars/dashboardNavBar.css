@@ -1,0 +1,74 @@
+
+  
+ 
+  
+  
+  .page-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    /* color: #333; */
+  }
+  
+  .dashboard-navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+ 
+
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .dashboard-navbar {
+      flex-direction: row !important;
+      margin-left: 0 !important;
+      width: 100% !important;
+    }
+  
+    .page-title {
+      font-size: 1.25rem;
+    }
+  }
+  
+  /* Animaciones */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .user-menu {
+    animation: fadeIn 0.2s ease-out;
+  }
+  
+  /* Estilos para el navbar del dashboard */
+.dashboard-navbar {
+  transition: all 0.3s ease;
+}
+
+/* Cuando el sidebar está colapsado */
+.dashboard-navbar.sidebar-collapsed {
+  left: 70px;
+  width: calc(100% - 70px);
+}
+
+/* Cuando el sidebar está expandido */
+.dashboard-navbar.sidebar-expanded {
+  left: 280px;
+  width: calc(100% - 280px);
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .dashboard-navbar.sidebar-collapsed,
+  .dashboard-navbar.sidebar-expanded {
+    left: 0;
+    width: 100%;
+  }
+}

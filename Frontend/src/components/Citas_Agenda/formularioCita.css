@@ -1,0 +1,228 @@
+/* Estilos para el formulario de citas */
+.time-slot {
+  padding: 8px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.time-slot:hover {
+  background-color: #fff0f7;
+  border-color: #ff69b4;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.time-slot.selected {
+  background-color: #ff69b4;
+  color: white;
+  border-color: #ff69b4;
+  box-shadow: 0 4px 6px rgba(255, 105, 180, 0.3);
+}
+
+.time-slot.unavailable {
+  background-color: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+  text-decoration: line-through;
+  transform: none;
+  box-shadow: none;
+}
+
+.employee-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.employee-card:hover {
+  border-color: #ff69b4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+.employee-card.selected {
+  border-color: #ff69b4;
+  background-color: #fff0f7;
+  box-shadow: 0 4px 8px rgba(255, 105, 180, 0.2);
+}
+
+.step-indicator {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  position: relative;
+  padding: 0 20px;
+}
+
+.step-indicator::before {
+  content: "";
+  position: absolute;
+  top: 16px;
+  left: 40px;
+  right: 40px;
+  height: 3px;
+  background-color: #fff0f7;
+  z-index: 0;
+  border-radius: 3px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.step-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff0f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.step.active .step-circle {
+  background-color: #ff69b4;
+  color: white;
+  box-shadow: 0 4px 8px rgba(255, 105, 180, 0.3);
+  transform: scale(1.1);
+}
+
+.step.completed .step-circle {
+  background-color: #da70d6;
+  color: white;
+  box-shadow: 0 4px 8px rgba(218, 112, 214, 0.3);
+}
+
+.step-text {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.step.active .step-text {
+  color: #ff69b4;
+  font-weight: 600;
+}
+
+.step.completed .step-text {
+  color: #da70d6;
+  font-weight: 600;
+}
+
+.step-line {
+  flex-grow: 1;
+  height: 3px;
+  background-color: #fff0f7;
+  margin-top: -28px;
+  z-index: 0;
+  transition: all 0.3s ease;
+  border-radius: 3px;
+}
+
+.step.active ~ .step-line {
+  background: linear-gradient(90deg, #ff69b4 0%, #fff0f7 100%);
+}
+
+/* Estilos adicionales para mejorar la apariencia del formulario */
+@media (min-width: 768px) {
+  .max-w-5xl {
+    max-width: 64rem;
+  }
+}
+
+.bg-white {
+  box-shadow: 0 4px 12px -2px rgba(255, 105, 180, 0.08);
+}
+
+select,
+input {
+  min-height: 42px;
+  transition: all 0.2s ease;
+}
+
+select:focus,
+input:focus {
+  border-color: #ff69b4;
+  box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.2);
+  outline: none;
+}
+
+/* Animaciones y transiciones */
+button {
+  transition: all 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Estilos para el botón de cerrar */
+button[aria-label="Cerrar"] {
+  transition: all 0.2s ease;
+  opacity: 0.8;
+}
+
+button[aria-label="Cerrar"]:hover {
+  opacity: 1;
+  transform: scale(1.1) rotate(90deg);
+}
+
+/* Estilos para la confirmación */
+.bg-pink-50 {
+  background-color: #fff0f7;
+  border-radius: 8px;
+}
+
+/* Estilos para los mensajes de error y éxito */
+.bg-red-100 {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el modal completo */
+.max-w-5xl.mx-auto.relative {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -5px rgba(255, 105, 180, 0.15), 0 8px 10px -6px rgba(255, 105, 180, 0.1);
+}
+
+/* Nuevos estilos para la selección de horarios */
+[class*="grid-cols"] > div {
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+[class*="grid-cols"] > div:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(255, 105, 180, 0.1);
+}
+
+[class*="grid-cols"] > div.bg-pink-500 {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(255, 105, 180, 0.5);
+}
+
+/* Estilo para mostrar información de fecha y empleado */
+.font-bold {
+  color: #ff69b4;
+}
+

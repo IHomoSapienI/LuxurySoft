@@ -1,0 +1,2 @@
+C:/Users/mario/Desktop/ProyectoNailSoft-main/mobile/android/app/.cxx/RelWithDebInfo/1760l183/x86/CMakeFiles/edit_cache.dir
+C:/Users/mario/Desktop/ProyectoNailSoft-main/mobile/android/app/.cxx/RelWithDebInfo/1760l183/x86/CMakeFiles/rebuild_cache.dir

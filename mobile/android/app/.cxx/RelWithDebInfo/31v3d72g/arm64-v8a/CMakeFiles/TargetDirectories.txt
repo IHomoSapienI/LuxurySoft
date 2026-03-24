@@ -1,0 +1,2 @@
+C:/Users/mario/Desktop/mobile/android/app/.cxx/RelWithDebInfo/31v3d72g/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/mario/Desktop/mobile/android/app/.cxx/RelWithDebInfo/31v3d72g/arm64-v8a/CMakeFiles/rebuild_cache.dir

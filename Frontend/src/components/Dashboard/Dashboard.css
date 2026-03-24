@@ -1,0 +1,217 @@
+.dashboard-container {
+    min-height: 100vh;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  }
+  
+  .dashboard-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .dashboard-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #ff69b4, #da70d6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .dashboard-subtitle {
+    color: #718096;
+    font-size: 1.1rem;
+  }
+  
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 500px), 1fr));
+    gap: 2rem;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  
+  .dashboard-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+  }
+  
+  .dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(219, 39, 119, 0.1);
+  }
+  
+  .card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ff69b4, #da70d6);
+    color: white;
+    font-size: 1.25rem;
+  }
+  
+  .card-header h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin: 0;
+  }
+  
+  .card-content {
+    position: relative;
+    height: 300px;
+  }
+  
+  /* Estilos específicos para cada tarjeta */
+  .appointments-card {
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.05), rgba(218, 112, 214, 0.05));
+  }
+  
+  .sales-card {
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.08), rgba(218, 112, 214, 0.08));
+  }
+  
+  .services-card {
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.05), rgba(218, 112, 214, 0.05));
+  }
+  
+  .today-card {
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.08), rgba(218, 112, 214, 0.08));
+  }
+  
+  /* Animaciones */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .dashboard-container {
+      padding: 1rem;
+    }
+  
+    .dashboard-header h1 {
+      font-size: 2rem;
+    }
+  
+    .dashboard-subtitle {
+      font-size: 1rem;
+    }
+  
+    .dashboard-grid {
+      gap: 1rem;
+    }
+  
+    .card-content {
+      height: 250px;
+    }
+  }
+  
+  /* Estilos para las tablas dentro de las tarjetas */
+  .dashboard-card table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  
+  .dashboard-card th {
+    background: rgba(219, 39, 119, 0.05);
+    color: #2d3748;
+    font-weight: 600;
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 2px solid rgba(219, 39, 119, 0.1);
+  }
+  
+  .dashboard-card td {
+    padding: 0.75rem;
+    border-bottom: 1px solid rgba(219, 39, 119, 0.05);
+    color: #4a5568;
+  }
+  
+  .dashboard-card tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .dashboard-card tbody tr:hover {
+    background: rgba(219, 39, 119, 0.02);
+  }
+  
+  /* Estilos para los gráficos */
+  .dashboard-card canvas {
+    max-width: 100%;
+    height: 100%;
+  }
+  
+  /* Efectos de hover mejorados */
+  .card-icon {
+    transition: transform 0.3s ease;
+  }
+  
+  .dashboard-card:hover .card-icon {
+    transform: scale(1.1);
+  }
+  
+  /* Scrollbar personalizado */
+  .dashboard-card {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(219, 39, 119, 0.3) transparent;
+  }
+  
+  .dashboard-card::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .dashboard-card::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .dashboard-card::-webkit-scrollbar-thumb {
+    background-color: rgba(219, 39, 119, 0.3);
+    border-radius: 3px;
+  }
+  
+  /* Efecto de brillo en hover */
+  .dashboard-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+  }
+  
+  .dashboard-card:hover::after {
+    transform: translateX(100%);
+  }
+  
+  

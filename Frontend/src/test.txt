@@ -1,0 +1,558 @@
+
+.decoration-bubble {
+  animation: float 6s ease-in-out infinite;
+}
+
+.decoration-bubble:nth-child(2) {
+  animation-delay: -1s;
+}
+.decoration-bubble:nth-child(3) {
+  animation-delay: -2s;
+}
+.decoration-bubble:nth-child(4) {
+  animation-delay: -3s;
+}
+.decoration-bubble:nth-child(5) {
+  animation-delay: -4s;
+}
+
+/* Estilos específicos para los navbars */
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.navbar-menu::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+@media (min-width: 768px) {
+  .navbar-menu {
+    overflow-x: visible;
+    padding-bottom: 0;
+  }
+}
+
+/* Ajustes para el navbar con sidebar */
+@media (max-width: 1200px) {
+  .navbar-menu {
+    gap: 0.5rem;
+  }
+
+  .menu-trigger {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+}
+
+
+/* ===== NUEVOS ESTILOS ===== */
+
+/* Gradientes para tarjetas */
+.card-gradient-1 {
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+  color: hsl(var(--primary-foreground));
+}
+
+.card-gradient-2 {
+  background: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--primary)) 100%);
+  color: hsl(var(--primary-foreground));
+}
+
+.card-gradient-3 {
+  background: linear-gradient(135deg, #b81492 0%, #0ea5e9 100%);
+  color: white;
+}
+
+.card-gradient-33 {
+  background: linear-gradient(135deg, #ff008c 0%, #e26ab4 50%, #ceb6c4 100%);
+  color: white;
+}
+
+
+
+.card-gradient-4 {
+  background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+  color: white;
+}
+
+.card-gradient-5 {
+  background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+  color: white;
+}
+
+/* Gradientes con más colores */
+.card-gradient-6 {
+  background: linear-gradient(135deg, #f97316 0%, hsl(var(--primary)) 50%, #8b5cf6 100%);
+  color: white;
+}
+
+.card-gradient-7 {
+  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #8b5cf6 100%);
+  color: white;
+}
+
+
+/* Efectos de glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.darkglass {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-card {
+  @apply glass rounded-lg p-6 shadow-lg;
+}
+
+/* Efectos de hover para tarjetas */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Animaciones adicionales */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes bounce-subtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-bounce-subtle {
+  animation: bounce-subtle 2s infinite;
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+/* Efectos de texto */
+.text-gradient-primary {
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-secondary {
+  background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.text-shadow-lg {
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Sombras personalizadas */
+.shadow-soft {
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.shadow-hard {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.shadow-inner-soft {
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.shadow-glow {
+  box-shadow: 0 0 15px rgba(var(--primary), 0.5);
+}
+
+.dark .shadow-glow {
+  box-shadow: 0 0 15px hsla(var(--primary), 0.5);
+}
+
+/* Bordes personalizados */
+.border-gradient {
+  border: 2px solid transparent;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image: 
+    linear-gradient(to right, hsl(var(--background)), hsl(var(--background))), 
+    linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+}
+
+.border-dashed-custom {
+  background-image: 
+    linear-gradient(90deg, hsl(var(--border)) 50%, transparent 50%),
+    linear-gradient(90deg, hsl(var(--border)) 50%, transparent 50%),
+    linear-gradient(0deg, hsl(var(--border)) 50%, transparent 50%),
+    linear-gradient(0deg, hsl(var(--border)) 50%, transparent 50%);
+  background-position: top, bottom, left, right;
+  background-size: 15px 1px, 15px 1px, 1px 15px, 1px 15px;
+  background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+}
+
+/* Contenedores con formas */
+.container-rounded {
+  @apply rounded-lg p-6;
+}
+
+.container-pill {
+  @apply rounded-full px-6 py-3;
+}
+
+.container-blob {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
+
+/* Botones personalizados */
+.btn-custom {
+  @apply inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50;
+}
+
+.btn-primary-custom {
+  @apply btn-custom bg-primary text-primary-foreground hover:bg-primary/90;
+}
+
+.btn-secondary-custom {
+  @apply btn-custom bg-secondary text-secondary-foreground hover:bg-secondary/80;
+}
+
+.btn-outline-custom {
+  @apply btn-custom border border-input bg-background hover:bg-accent hover:text-accent-foreground;
+}
+
+.btn-ghost-custom {
+  @apply btn-custom hover:bg-accent hover:text-accent-foreground;
+}
+
+.btn-destructive-custom {
+  @apply btn-custom bg-destructive text-destructive-foreground hover:bg-destructive/90;
+}
+
+/* Botones con iconos */
+.btn-icon {
+  @apply inline-flex h-10 w-10 items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50;
+}
+
+/* Efectos para imágenes */
+.img-filter-grayscale {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.img-filter-grayscale:hover {
+  filter: grayscale(0%);
+}
+
+.img-filter-blur {
+  filter: blur(2px);
+  transition: filter 0.3s ease;
+}
+
+.img-filter-blur:hover {
+  filter: blur(0);
+}
+
+/* Divisores personalizados */
+.divider-gradient {
+  height: 1px;
+  background: linear-gradient(to right, transparent, hsl(var(--border)), transparent);
+}
+
+.divider-dashed {
+  height: 1px;
+  background-image: linear-gradient(to right, hsl(var(--border)) 50%, transparent 50%);
+  background-size: 8px 1px;
+  background-repeat: repeat-x;
+}
+
+/* Badges personalizados */
+.badge-custom {
+  @apply inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+}
+
+.badge-primary-custom {
+  @apply badge-custom bg-primary text-primary-foreground hover:bg-primary/80;
+}
+
+.badge-secondary-custom {
+  @apply badge-custom bg-secondary text-secondary-foreground hover:bg-secondary/80;
+}
+
+.badge-outline-custom {
+  @apply badge-custom border-border bg-transparent text-foreground hover:bg-muted/50;
+}
+
+/* Layouts personalizados */
+.grid-auto-fit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.grid-auto-fill {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+/* Scrollbar personalizada */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--primary)) transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--primary));
+  border-radius: 3px;
+}
+
+/* Inputs personalizados */
+.input-custom {
+  @apply flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+.input-icon {
+  @apply relative;
+}
+
+.input-icon input {
+  @apply pl-10;
+}
+
+.input-icon svg {
+  @apply absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground;
+}
+
+/* Efectos de fondo */
+.bg-dots {
+  background-image: radial-gradient(hsl(var(--muted-foreground)) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.bg-lines {
+  background-image: linear-gradient(hsl(var(--muted-foreground)) 1px, transparent 1px);
+  background-size: 100% 20px;
+}
+
+.bg-grid {
+  background-image: 
+    linear-gradient(hsl(var(--muted-foreground)) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--muted-foreground)) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Utilidades de posicionamiento */
+.center-absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.center-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Utilidades de texto */
+.text-truncate-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.text-truncate-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.text-truncate-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Utilidades de espaciado */
+.space-y-custom > * + * {
+  margin-top: var(--space, 1rem);
+}
+
+.space-x-custom > * + * {
+  margin-left: var(--space, 1rem);
+}
+
+/* Efectos de transición */
+.transition-all-custom {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-transform-custom {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-opacity-custom {
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Efectos de carga */
+.loading-dots::after {
+  content: '...';
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { content: '.'; }
+  33% { content: '..'; }
+  66% { content: '...'; }
+}
+
+.loading-spinner {
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-top-color: hsl(var(--primary));
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin-slow 1s linear infinite;
+}
+
+.dark .loading-spinner {
+  border-color: rgba(255, 255, 255, 0.1);
+  border-top-color: hsl(var(--primary));
+}
+
+/* Efectos de notificación */
+@keyframes notification-pulse {
+  0% { box-shadow: 0 0 0 0 hsla(var(--primary), 0.7); }
+  70% { box-shadow: 0 0 0 10px hsla(var(--primary), 0); }
+  100% { box-shadow: 0 0 0 0 hsla(var(--primary), 0); }
+}
+
+.notification-dot {
+  width: 10px;
+  height: 10px;
+  background-color: hsl(var(--primary));
+  border-radius: 50%;
+  animation: notification-pulse 2s infinite;
+}
+
+/* Estilos para tablas */
+.table-custom {
+  @apply w-full text-sm;
+}
+
+.table-custom th {
+  @apply border-b border-border px-4 py-3 text-left font-medium text-muted-foreground;
+}
+
+.table-custom td {
+  @apply border-b border-border px-4 py-3;
+}
+
+.table-custom tr:hover {
+  @apply bg-muted/50;
+}
+
+/* Estilos para tarjetas */
+.card-custom {
+  @apply rounded-lg border border-border bg-card p-6 shadow-sm;
+}
+
+.card-custom-hover {
+  @apply card-custom transition-all hover:shadow-md;
+}
+
+/* Estilos para pestañas */
+.tabs-custom {
+  @apply flex border-b border-border;
+}
+
+.tab-custom {
+  @apply -mb-px border-b-2 border-transparent px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground;
+}
+
+.tab-custom[data-state="active"] {
+  @apply border-primary text-foreground;
+}
+
+/* Estilos para tooltips */
+.tooltip-custom {
+  @apply absolute z-50 rounded-md bg-popover px-3 py-1.5 text-xs text-popover-foreground shadow-md animate-in fade-in-0 zoom-in-95;
+}
+
+/* Estilos para acordeones */
+.accordion-custom {
+  @apply w-full rounded-md border border-border;
+}
+
+.accordion-item-custom {
+  @apply border-b border-border last:border-0;
+}
+
+.accordion-trigger-custom {
+  @apply flex w-full items-center justify-between px-4 py-3 text-sm font-medium transition-all hover:bg-muted/50;
+}
+
+.accordion-content-custom {
+  @apply overflow-hidden px-4 text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down;
+}

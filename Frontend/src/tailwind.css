@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 330 81% 90%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 330 81% 97%;
+    --accent-foreground: 330 81% 60%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 330 81% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 330 81% 60%;
+
+    --radius: 0.5rem;
+
+   
+
+  }
+  .border-gradient {
+    border: 2px solid transparent;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    background-image: 
+      linear-gradient(to right, hsl(var(--background)), hsl(var(--background))), 
+      linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 330 81% 60%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 330 81% 20%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 330 81% 60%;
+    
+  }
+  
+  .card-gradient-33 {
+    background:linear-gradient(135deg, #ceb6c4 0%, #b45d92 10%, #ceb6c4 100%,#d461a8 50%);
+    color: white;
+    
+  }
+
+  /* .card-gradient-33 {
+    background: linear-gradient(135deg, #ff008c 0%, #e26ab4 50%, #ceb6c4 100%);
+    color: white;
+  } */
+  .card-gradient-4 {
+    background: linear-gradient(135deg, #151315 0%, #22273898 50%, #3c3c3c 100%);
+    color: white;
+  }
+  .card-gradient-5 {
+    background: linear-gradient(135deg, #151315 80%, #22273898 100%, #3c3c3c 100%);
+    color: white;
+  }
+  
+  .glass {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .darkglass {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .text-gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .text-gradient-secondary {
+  background: linear-gradient(135deg, #ef0090 0%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-3 {
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.border-gradient {
+  border: 10px solid transparent;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image: 
+    linear-gradient(to right, hsl(var(--background)), hsl(var(--background))), 
+    linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+}
+
+.border-dashed-custom {
+  background-image: 
+    linear-gradient(90deg, hsl(var(--border)) 50%, transparent 50%),
+    linear-gradient(90deg, hsl(var(--border)) 50%, transparent 50%),
+    linear-gradient(0deg, hsl(var(--border)) 50%, transparent 50%),
+    linear-gradient(0deg, hsl(var(--border)) 50%, transparent 50%);
+  background-position: top, bottom, left, right;
+  background-size: 15px 1px, 15px 1px, 1px 15px, 1px 15px;
+  background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+}
+
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Animaciones para los elementos decorativos */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

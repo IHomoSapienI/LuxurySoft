@@ -1,0 +1,351 @@
+/* Estilos para CitasEnProgreso - Versión mejorada */
+
+/* Estilos generales */
+/* .p-6 {
+    background: linear-gradient(135deg, #fff0f7 0%, #f9f0ff 100%);
+    min-height: 100vh;
+  } */
+  
+  /* Título principal */
+  .text-2xl.font-semibold.mb-6 {
+    /* color: #ff69b4; */
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .text-2xl.font-semibold.mb-6::before {
+    content: "";
+    display: inline-block;
+    width: 0.5rem;
+    height: 2rem;
+    background-color: #ff69b4;
+    margin-right: 0.75rem;
+    border-radius: 4px;
+  }
+  
+  /* Botón de actualizar */
+  .bg-pink-500.hover\:bg-pink-700 {
+    background-color: #ff69b4;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .bg-pink-500.hover\:bg-pink-700:hover {
+    background-color: #ff5ba7;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(255, 105, 180, 0.3);
+  }
+  
+  /* Contenedor de la cuadrícula */
+  .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3.gap-6 {
+    margin-top: 1.5rem;
+  }
+  
+  /* Tarjetas de citas */
+  .bg-white.rounded-lg.shadow-md.overflow-hidden {
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #f3f4f6;
+  }
+  
+  .bg-white.rounded-lg.shadow-md.overflow-hidden:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 105, 180, 0.15);
+  }
+  
+  /* Colores específicos para los estados según el código proporcionado */
+  /* Pendiente: Azul */
+  /* .bg-yellow-100 {
+    background-color: #eff6ff !important; 
+    border-bottom: 1px solid #2563eb;
+  } */
+  
+  /* En Progreso: Amarillo */
+  /* Color amarillo claro para En Progreso */
+  /* .bg-blue-100 {
+    background-color: #fffbeb !important; 
+    border-bottom: 1px solid #d97706;
+  } */
+  
+  /* Confirmada/Completada: Verde */
+  .bg-green-100 {
+    background-color: #ecfdf5 !important; /* Color verde claro para Completada/Confirmada */
+    border-bottom: 1px solid #059669;
+  }
+  
+  /* Badges de estado - colores específicos */
+  .bg-yellow-200.text-yellow-800 {
+    background-color: #dbeafe !important; /* Azul claro */
+    color: #2563eb !important; /* Azul oscuro */
+    font-weight: 600;
+  }
+  
+  .bg-blue-200.text-blue-800 {
+    background-color: #fef3c7 !important; /* Amarillo claro */
+    color: #333 !important; /* Texto oscuro para En Progreso */
+    font-weight: 600;
+  }
+  
+  .bg-green-200.text-green-800 {
+    background-color: #d1fae5 !important; /* Verde claro */
+    color: #059669 !important; /* Verde oscuro */
+    font-weight: 600;
+  }
+  
+  /* Contenido de la tarjeta */
+  .p-4 {
+    padding: 1.25rem;
+  }
+  
+  /* Información de la cita */
+  .text-sm.text-gray-600 {
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    /* color: #4b5563; */
+  }
+  
+  .text-sm.text-gray-600 strong {
+    font-weight: 600;
+    margin-right: 0.5rem;
+    min-width: 5rem;
+    display: inline-block;
+  }
+  
+  /* Botones con colores específicos */
+  .bg-blue-500.hover\:bg-blue-700 {
+    background-color: #3b82f6 !important; /* Azul */
+    border-color: #2563eb !important;
+    transition: all 0.2s ease;
+  }
+  
+  .bg-blue-500.hover\:bg-blue-700:hover {
+    background-color: #2563eb !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+  }
+  
+  .bg-green-500.hover\:bg-green-700 {
+    background-color: #10b981 !important; /* Verde */
+    border-color: #059669 !important;
+    transition: all 0.2s ease;
+  }
+  
+  .bg-green-500.hover\:bg-green-700:hover {
+    background-color: #059669 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(5, 150, 105, 0.3);
+  }
+  
+  /* Estado vacío */
+  .bg-gray-100.p-6.rounded-lg.text-center {
+    background-color: #fff0f7;
+    border-radius: 1rem;
+    padding: 3rem 2rem;
+    text-align: center;
+    margin-top: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .text-yellow-500.text-4xl {
+    color: #ff69b4;
+    opacity: 0.7;
+  }
+  
+  .text-gray-500 {
+    font-size: 1.125rem;
+    color: #6b7280;
+    font-weight: 500;
+  }
+  
+  /* Estado de carga */
+  .flex.justify-center.items-center.h-64 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    background: linear-gradient(135deg, #fff0f7 0%, #f9f0ff 100%);
+    border-radius: 1rem;
+  }
+  
+  .animate-spin.rounded-full.h-12.w-12.border-t-2.border-b-2.border-pink-600 {
+    border-color: #ff69b4;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Estado de error */
+  .bg-red-100.border.border-red-400.text-red-700 {
+    background-color: #fee2e2;
+    border: 1px solid #fecaca;
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .font-bold {
+    font-weight: 600;
+    /* color: #b91c1c; */
+    margin-bottom: 0.5rem;
+  }
+  
+  .mt-4.bg-blue-500.hover\:bg-blue-700 {
+    margin-top: 1rem;
+    background-color: #ff69b4;
+    transition: all 0.2s ease;
+  }
+  
+  .mt-4.bg-blue-500.hover\:bg-blue-700:hover {
+    background-color: #ff5ba7;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(255, 105, 180, 0.3);
+  }
+  
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .p-6 {
+      padding: 1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .flex.justify-end.mb-4 {
+      flex-direction: column;
+    }
+  
+    .bg-pink-500.hover\:bg-pink-700 {
+      width: 100%;
+    }
+  
+    .flex.justify-end {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  
+    .flex.justify-end button {
+      width: 100%;
+    }
+  }
+  
+  /* @media (max-width: 480px) {
+    .text-2xl.font-semibold.mb-6 {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .text-2xl.font-semibold.mb-6::before {
+      margin-bottom: 0.5rem;
+      width: 2rem;
+      height: 0.5rem;
+    }
+  
+    .flex.justify-between.items-center {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+  } */
+  
+  .btn-info-2 {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    height: 3.5rem;
+    width: 6.5rem;
+  }
+  
+  .btn-info-2::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+
+    z-index: -1;
+    transition: none;
+    transform: skewX(-30deg);
+  }
+  
+  .btn-info-2:hover::before,
+  .btn-delete-cp:hover::before,
+  .btn-start-1:hover::before,
+  .btn-cancel-cp:hover::before {
+    left: 100%;
+    transition: all 0.5s ease;
+  }
+
+  /* Estilos para el boton de borrar */
+  .btn-delete-cp {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    height: 3.5rem;
+    width: 6.5rem;
+  }
+  
+  .btn-delete-cp::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+
+    z-index: -1;
+    transition: none;
+    transform: skewX(-30deg);
+  }
+
+  /* Estilos para el boton de comenzar la venta */
+  .btn-start-1 {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    height: 3.5rem;
+    width: 6.5rem;
+  }
+  
+  .btn-start-1::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+
+    z-index: -1;
+    transition: none;
+    transform: skewX(-30deg);
+  }
+
+  /* Estilos para el boton de comenzar la cancelar */
+  .btn-cancel-cp {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    height: 3.5rem;
+    width: 6.5rem;
+  }
+  
+  .btn-cancel-cp::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+
+    z-index: -1;
+    transition: none;
+    transform: skewX(-30deg);
+  }

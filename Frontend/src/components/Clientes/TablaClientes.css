@@ -1,0 +1,414 @@
+/* Estilos para la tabla de tipos de servicios */
+.tabla-container {
+    padding: 20px;
+    background-color: #f9fafb;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .tiposerv-tabla-moderna {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .tiposerv-tabla-moderna th {
+    /* background-color: #f3f4f6; */
+    /* color: #374151; */
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .tiposerv-tabla-moderna td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e5e7eb;
+    /* color: #4b5563; */
+    font-size: 0.9rem;
+  }
+  
+  .tiposerv-tabla-moderna tr:last-child td {
+    border-bottom: none;
+  }
+  
+  /* .tiposerv-tabla-moderna th:hover {
+    background-color: #5b5b5b;
+  } */
+  /* .tiposerv-tabla-moderna tr:hover {
+    background-color: #f9fafb;
+  } */
+  
+  /* Botones de acción */
+  .btn-add {
+    background-color: #db2777;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s;
+  }
+  
+  .btn-add:hover {
+    background-color: #be185d;
+  }
+  
+  .btn-edit-1,
+  .btn-delete-1,
+  .btn-toggle-1 {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .btn-edit-1 {
+    background-color: #8bb1ee;
+    color: white;
+  }
+  
+  .btn-delete-1 {
+    background-color: #f35f81;
+    color: white;
+  }
+
+  .btn-toggle-1 {
+    background-color: #f9d39a;
+    color: white;
+  }
+
+
+
+    
+/* Botón con efecto de línea animada */
+.btn-edit-1,
+.btn-delete-1,
+.btn-info,
+.btn-success,
+.btn-toggle-1 {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Efecto de línea animada que funciona con cualquier color de fondo */
+.btn-edit-1::before,
+.btn-delete-1::before,
+.btn-info::before,
+.btn-success::before,
+.btn-toggle-1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  z-index: -1;
+  transition: none;
+  transform: skewX(-30deg);
+}
+
+.btn-edit-1:hover::before,
+.btn-delete-1:hover::before,
+.btn-info:hover::before,
+.btn-success:hover::before,
+.btn-toggle-1:hover::before {
+  left: 100%;
+  transition: all 0.5s ease;
+}
+
+/* Puedes personalizar el color de fondo sin perder la animación */
+.btn-edit {
+  background-color: #000000; /* Puedes cambiar este color */
+  color: white;
+}
+
+.btn-edit:hover {
+  background-color: #070b13; /* Y también este color */
+}
+
+
+
+
+  
+  .btn-delete {
+    background-color: #ef4444;
+    color: white;
+  }
+  
+  .btn-delete:hover {
+    background-color: #dc2626;
+  }
+  
+  .btn-toggle {
+    background-color: #6b7280;
+    color: white;
+  }
+  
+  .btn-toggle.active {
+    background-color: #10b981;
+  }
+  
+  .btn-toggle.active:hover {
+    background-color: #059669;
+  }
+  
+  .btn-toggle.inactive {
+    background-color: #6b7280;
+  }
+  
+  .btn-toggle.inactive:hover {
+    background-color: #4b5563;
+  }
+  
+  /* Badges de estado */
+  .estado-badge1 {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  /* .estado-badge.activo {
+    background-color: #d1fae5;
+    color: #065f46;
+  }
+  
+  .estado-badge.inactivo {
+    background-color: #fee2e2;
+    color: #991b1b;
+  } */
+  
+  /* Badge para tipo promocional */
+  .tipo-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  .tipo-badge.promocional {
+    /* background-color: #e9be16; */
+    /* color: #92400e; */
+  }
+  
+  .tipo-badge.normal {
+    /* background-color: #e0e7ff; */
+    /* color: #4338ca; */
+  }
+  
+  /* Buscador */
+  .search-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 8px 16px 8px 40px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+  }
+  
+  .search-input:focus {
+    outline: none;
+    border-color: #db2777;
+    box-shadow: 0 0 0 2px rgba(219, 39, 119, 0.1);
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+  }
+  
+  /* Paginación */
+  .pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .pagination-btn {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #e5e7eb;
+    background-color: white;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .pagination-btn:hover:not(.disabled) {
+    background-color: #f3f4f6;
+  }
+  
+  .pagination-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .pagination-pages {
+    display: flex;
+    margin: 0 8px;
+  }
+  
+  .pagination-number {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #e5e7eb;
+    background-color: white;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .pagination-number:hover {
+    background-color: #f3f4f6;
+  }
+  
+  .pagination-number.active {
+    background-color: #db2777;
+    color: white;
+    border-color: #db2777;
+  }
+  
+  /* Modal */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: white;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+  }
+  
+  /* Formulario */
+  .form-group {
+    margin-bottom: 16px;
+  }
+  
+  .form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #374151;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+  }
+  
+  .form-input:focus {
+    outline: none;
+    border-color: #db2777;
+    box-shadow: 0 0 0 2px rgba(219, 39, 119, 0.1);
+  }
+  
+  .form-checkbox {
+    cursor: pointer;
+  }
+  
+  /* Botones del formulario */
+  .btn-primary {
+    background-color: #d24787;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .btn-primary:hover {
+    background-color: #be185d;
+  }
+  
+  .btn-secondary {
+    background-color: #6b7280;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #4b5563;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .tabla-container {
+      padding: 10px;
+    }
+  
+    .tabla-moderna th,
+    .tabla-moderna td {
+      padding: 8px;
+    }
+  
+    .pagination-btn,
+    .pagination-number {
+      width: 32px;
+      height: 32px;
+    }
+  }
+  
+  

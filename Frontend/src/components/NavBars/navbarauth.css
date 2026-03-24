@@ -1,0 +1,152 @@
+.navbar-auth {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(219, 39, 119, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-auth-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar-auth-brand {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .brand-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+  
+  .brand-link:hover {
+    background: rgba(219, 39, 119, 0.05);
+  }
+  
+  .brand-link img {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  .brand-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #ff69b4, #da70d6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .navbar-auth-menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .auth-buttons {
+    display: flex;
+    gap: 1rem;
+    
+    text-align: center;
+    width: 50vh;
+  }
+  
+  .auth-button {
+    text-decoration: none;
+    padding: 0.75rem 10.5rem;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    font-weight: 800;
+    transition: all 0.3s ease;
+    margin: auto;
+  }
+  
+  .button-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .button-icon {
+    font-size: 1.1rem;
+  }
+  
+  .login-button {
+    background: rgba(219, 39, 119, 0.1);
+    color: #db2777;
+  }
+  
+  .login-button:hover {
+    background: rgba(219, 39, 119, 0.15);
+    transform: translateY(-2px);
+  }
+  
+  .register-button {
+    background: linear-gradient(135deg, #ff69b4, #da70d6);
+    color: white;
+    box-shadow: 0 4px 15px rgba(219, 39, 119, 0.2);
+  }
+  
+  .register-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(219, 39, 119, 0.3);
+  }
+  
+  
+  /* Animations */
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+    
+  /* Responsive */
+  @media (max-width: 768px) {
+    .navbar-auth {
+      padding: 1rem;
+      
+    }
+  
+    .brand-text {
+      font-size: 1.25rem;
+    }
+  
+    .auth-buttons {
+      gap: 0.5rem;
+    }
+  
+    .auth-button {
+      padding: 0.5rem 1rem;
+    }
+  
+    .button-text {
+      display: none;
+    }
+  
+    .button-icon {
+      margin: 0;
+    }
+  }
+  

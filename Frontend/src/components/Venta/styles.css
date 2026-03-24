@@ -1,0 +1,113 @@
+/* Estilos adicionales para el módulo de ventas unificado */
+
+/* Estilos para las pestañas */
+.tabs-container {
+    margin-bottom: 1.5rem;
+  }
+  
+  .tabs-header {
+    display: flex;
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 1rem;
+  }
+  
+  .tab-button {
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    color: #6b7280;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 2px solid transparent;
+  }
+  
+  .tab-button:hover {
+    color: #4b5563;
+  }
+  
+  .tab-button.active {
+    color: #db2777;
+    border-bottom: 2px solid #db2777;
+  }
+  
+  .tab-content {
+    padding: 0.5rem 0;
+  }
+  
+  .tab-content.hidden {
+    display: none;
+  }
+  
+  /* Estilos para los botones de incremento/decremento */
+  .btn-icon-sm {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 0.25rem;
+    background-color: #f3f4f6;
+    color: #4b5563;
+    border: 1px solid #e5e7eb;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .btn-icon-sm:hover {
+    background-color: #e5e7eb;
+    color: #1f2937;
+  }
+  
+  /* Estilos para los badges de tipo de venta */
+  .tipo-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+  
+  .tipo-badge.productos {
+    background-color: #dbeafe;
+    color: #2563eb;
+  }
+  
+  .tipo-badge.servicios {
+    background-color: #fce7f3;
+    color: #db2777;
+  }
+  
+  .tipo-badge.mixta {
+    background-color: #f3e8ff;
+    color: #9333ea;
+  }
+  
+  /* Botón de éxito */
+  .btn-success {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    background-color: #10b981;
+    color: white;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    border: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .btn-success:hover {
+    background-color: #059669;
+  }
+  
+  .btn-success:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.4);
+  }
+  
+  .btn-success:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
