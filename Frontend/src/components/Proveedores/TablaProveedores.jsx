@@ -54,7 +54,7 @@ const TablaProveedores = () => {
       }
 
       // console.log("🔍 Obteniendo proveedores...")
-      const respuesta = await axios.get("https://gitbf.onrender.com/api/proveedores", {
+      const respuesta = await axios.get("https://luxurysoftbackendapi.onrender.com/api/proveedores", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -165,7 +165,7 @@ const TablaProveedores = () => {
           return
         }
 
-        await axios.delete(`https://gitbf.onrender.com/api/proveedores/${id}`, {
+        await axios.delete(`https://luxurysoftbackendapi.onrender.com/api/proveedores/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -238,7 +238,7 @@ const TablaProveedores = () => {
         try {
           // Opción 1: Endpoint específico para cambiar estado (si existe)
           response = await axios.patch(
-            `https://gitbf.onrender.com/api/proveedores/${id}/estado`,
+            `https://luxurysoftbackendapi.onrender.com/api/proveedores/${id}/estado`,
             { estado: nuevoEstado },
             {
               headers: {
@@ -258,7 +258,7 @@ const TablaProveedores = () => {
 
           // console.log("📤 Enviando datos completos:", proveedorActualizado)
 
-          response = await axios.put(`https://gitbf.onrender.com/api/proveedores/${id}`, proveedorActualizado, {
+          response = await axios.put(`https://luxurysoftbackendapi.onrender.com/api/proveedores/${id}`, proveedorActualizado, {
             headers: {
               Authorization: `Bearer ${token}`,
               "Content-Type": "application/json",

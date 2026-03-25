@@ -31,7 +31,7 @@ const AppointmentsTable = () => {
         }
 
         const headers = { Authorization: `Bearer ${token}` }
-        const response = await axios.get("https://gitbf.onrender.com/api/citas", { headers })
+        const response = await axios.get("https://luxurysoftbackendapi.onrender.com/api/citas", { headers })
         const citas = response.data.citas || []
 
         // Filtrar citas para hoy

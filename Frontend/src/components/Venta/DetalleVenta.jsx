@@ -15,7 +15,7 @@
 //   const [isLoading, setIsLoading] = useState(true)
 //   const [isProcessing, setIsProcessing] = useState(false)
 //   const [error, setError] = useState(null)
-//   const API_URL = "https://gitbf.onrender.com/api"
+//   const API_URL = "https://luxurysoftbackendapi.onrender.com/api"
 
 //   useEffect(() => {
 //     const fetchVenta = async () => {

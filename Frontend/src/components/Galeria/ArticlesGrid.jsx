@@ -30,7 +30,7 @@ const ArticlesGrid = () => {
     cargarServicios()
   }, [])
 
-  const baseUrl = "https://gitbf.onrender.com/uploads"
+  const baseUrl = "https://luxurysoftbackendapi.onrender.com/uploads"
 
   const manejarClickServicio = (servicio) => {
     setSelectedService(servicio)

@@ -175,7 +175,7 @@
 //             },
 //           }
 
-//           const perfilResponse = await axios.get("https://gitbf.onrender.com/api/usuarios/perfil", axiosConfig)
+//           const perfilResponse = await axios.get("https://luxurysoftbackendapi.onrender.com/api/usuarios/perfil", axiosConfig)
 //           console.log("Perfil del usuario:", perfilResponse.data)
 //           usuarioData = perfilResponse.data
 //         } catch (perfilError) {
@@ -184,7 +184,7 @@
 //           // Si tenemos userId, intentar obtener el usuario directamente
 //           if (userId) {
 //             try {
-//               const usuarioResponse = await axios.get(`https://gitbf.onrender.com/api/usuarios/${userId}`, {
+//               const usuarioResponse = await axios.get(`https://luxurysoftbackendapi.onrender.com/api/usuarios/${userId}`, {
 //                 headers,
 //                 timeout: 5000,
 //                 validateStatus: (status) => status < 500,
@@ -233,7 +233,7 @@
 //           // Y luego obtendremos el cliente de la primera cita, o buscaremos en la lista de clientes
 
 //           // Primero intentar con el endpoint de citas por cliente
-//           const citasResponse = await axios.get(`https://gitbf.onrender.com/api/citas/cliente?clienteId=${userId}`, {
+//           const citasResponse = await axios.get(`https://luxurysoftbackendapi.onrender.com/api/citas/cliente?clienteId=${userId}`, {
 //             headers,
 //             timeout: 5000,
 //             validateStatus: (status) => status < 500,
@@ -263,7 +263,7 @@
 //         if (clienteId) {
 //           try {
 //             console.log("Intentando obtener cliente directamente con clienteId:", clienteId)
-//             const clienteDirectoResponse = await axios.get(`https://gitbf.onrender.com/api/clientes/${clienteId}`, {
+//             const clienteDirectoResponse = await axios.get(`https://luxurysoftbackendapi.onrender.com/api/clientes/${clienteId}`, {
 //               headers,
 //               timeout: 5000,
 //               validateStatus: (status) => status < 500,
@@ -286,7 +286,7 @@
 
 //         // 3. Si no funcionó el endpoint específico, obtener todos los clientes y filtrar
 //         try {
-//           const clientesResponse = await axios.get("https://gitbf.onrender.com/api/clientes", {
+//           const clientesResponse = await axios.get("https://luxurysoftbackendapi.onrender.com/api/clientes", {
 //             headers,
 //             timeout: 5000,
 //             validateStatus: (status) => status < 500,
@@ -733,7 +733,7 @@
 //           const headers = { Authorization: `Bearer ${token}` }
 
 //           try {
-//             const response = await axios.get("https://gitbf.onrender.com/api/empleados", {
+//             const response = await axios.get("https://luxurysoftbackendapi.onrender.com/api/empleados", {
 //               headers,
 //               timeout: 5000,
 //               validateStatus: (status) => status < 500,
@@ -775,7 +775,7 @@
 //       console.log("Obteniendo citas existentes...")
 
 //       try {
-//         const response = await axios.get("https://gitbf.onrender.com/api/citas", {
+//         const response = await axios.get("https://luxurysoftbackendapi.onrender.com/api/citas", {
 //           headers,
 //           timeout: 5000,
 //           validateStatus: (status) => status < 500,
@@ -811,7 +811,7 @@
 //           const token = localStorage.getItem("token")
 //           const headers = { Authorization: `Bearer ${token}` }
 //           console.log("Obteniendo citas existentes...")
-//           const response = await axios.get("https://gitbf.onrender.com/api/citas", { headers })
+//           const response = await axios.get("https://luxurysoftbackendapi.onrender.com/api/citas", { headers })
 
 //           if (response.data && Array.isArray(response.data.citas)) {
 //             console.log(`Se encontraron ${response.data.citas.length} citas existentes`)
@@ -1041,7 +1041,7 @@
 //       const token = localStorage.getItem("token")
 //       const headers = { Authorization: `Bearer ${token}` }
 
-//       const response = await axios.post("https://gitbf.onrender.com/api/citas", dataToSend, { headers })
+//       const response = await axios.post("https://luxurysoftbackendapi.onrender.com/api/citas", dataToSend, { headers })
 
 //       // Actualizar las citas existentes para reflejar la nueva cita
 //       setCitasExistentes((prevCitas) => [
@@ -2333,7 +2333,7 @@ const useEmpleadosYCitas = (currentStep) => {
     setIsLoadingEmpleados(true)
     try {
       const headers = { Authorization: `Bearer ${user.token}` }
-      const response = await axios.get("https://gitbf.onrender.com/api/empleados", {
+      const response = await axios.get("https://luxurysoftbackendapi.onrender.com/api/empleados", {
         headers,
         timeout: 10000,
         validateStatus: (status) => status < 500,
@@ -2359,7 +2359,7 @@ const useEmpleadosYCitas = (currentStep) => {
 
     try {
       const headers = { Authorization: `Bearer ${user.token}` }
-      const response = await axios.get("https://gitbf.onrender.com/api/citas", {
+      const response = await axios.get("https://luxurysoftbackendapi.onrender.com/api/citas", {
         headers,
         timeout: 10000,
         validateStatus: (status) => status < 500,
@@ -2398,7 +2398,7 @@ const useClienteCompleto = (currentStep) => {
       const headers = { Authorization: `Bearer ${user.token}` }
 
       // Intentar obtener todos los clientes y buscar el que coincida con el usuario
-      const response = await axios.get("https://gitbf.onrender.com/api/clientes", {
+      const response = await axios.get("https://luxurysoftbackendapi.onrender.com/api/clientes", {
         headers,
         timeout: 10000,
         validateStatus: (status) => status < 500,
@@ -2824,7 +2824,7 @@ const SeleccionarServicios = () => {
 
       try {
         const headers = { Authorization: `Bearer ${user.token}` }
-        const response = await axios.post("https://gitbf.onrender.com/api/citas", dataToSend, { headers })
+        const response = await axios.post("https://luxurysoftbackendapi.onrender.com/api/citas", dataToSend, { headers })
 
         setCitasExistentes((prevCitas) => [
           ...prevCitas,

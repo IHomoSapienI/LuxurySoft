@@ -36,7 +36,7 @@ export default function TablaTipoServicios() {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        "https://gitbf.onrender.com/api/tiposervicios",
+        "https://luxurysoftbackendapi.onrender.com/api/tiposervicios",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -103,7 +103,7 @@ export default function TablaTipoServicios() {
       try {
         const token = localStorage.getItem("token");
         const response = await fetch(
-          `https://gitbf.onrender.com/api/tiposervicios/${id}/toggle-estado`,
+          `https://luxurysoftbackendapi.onrender.com/api/tiposervicios/${id}/toggle-estado`,
           {
             method: "PATCH",
             headers: {
@@ -160,7 +160,7 @@ export default function TablaTipoServicios() {
       try {
         const token = localStorage.getItem("token");
         const response = await fetch(
-          `https://gitbf.onrender.com/api/tiposervicios/${id}`,
+          `https://luxurysoftbackendapi.onrender.com/api/tiposervicios/${id}`,
           {
             method: "DELETE",
             headers: {

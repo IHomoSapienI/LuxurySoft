@@ -75,7 +75,7 @@ export default function TablaPermisos() {
 
       const token = localStorage.getItem("token");
       const response = await axios.get(
-        "https://gitbf.onrender.com/api/permisos",
+        "https://luxurysoftbackendapi.onrender.com/api/permisos",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -174,7 +174,7 @@ export default function TablaPermisos() {
 
         const token = localStorage.getItem("token");
         const response = await axios.put(
-          `https://gitbf.onrender.com/api/permisos/${id}`,
+          `https://luxurysoftbackendapi.onrender.com/api/permisos/${id}`,
           { activo: nuevoEstado },
           {
             headers: {
@@ -230,7 +230,7 @@ export default function TablaPermisos() {
 
         const token = localStorage.getItem("token");
         const response = await axios.delete(
-          `https://gitbf.onrender.com/api/permisos/${id}`,
+          `https://luxurysoftbackendapi.onrender.com/api/permisos/${id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

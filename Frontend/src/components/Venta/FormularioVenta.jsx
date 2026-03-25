@@ -35,27 +35,27 @@ const FormularioVenta = ({ venta, onGuardar, onCancelar }) => {
 
       const [clientesResponse, serviciosResponse, citasResponse, empleadosResponse, productosResponse] =
         await Promise.all([
-          fetch("https://gitbf.onrender.com/api/clientes", {
+          fetch("https://luxurysoftbackendapi.onrender.com/api/clientes", {
             headers: {
               Authorization: `Bearer ${token}`,
             },
           }),
-          fetch("https://gitbf.onrender.com/api/servicios", {
+          fetch("https://luxurysoftbackendapi.onrender.com/api/servicios", {
             headers: {
               Authorization: `Bearer ${token}`,
             },
           }),
-          fetch("https://gitbf.onrender.com/api/citas", {
+          fetch("https://luxurysoftbackendapi.onrender.com/api/citas", {
             headers: {
               Authorization: `Bearer ${token}`,
             },
           }),
-          fetch("https://gitbf.onrender.com/api/empleados", {
+          fetch("https://luxurysoftbackendapi.onrender.com/api/empleados", {
             headers: {
               Authorization: `Bearer ${token}`,
             },
           }),
-          fetch("https://gitbf.onrender.com/api/productos", {
+          fetch("https://luxurysoftbackendapi.onrender.com/api/productos", {
             headers: {
               Authorization: `Bearer ${token}`,
             },

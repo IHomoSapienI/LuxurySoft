@@ -138,7 +138,7 @@ export default function ForgotPassword() {
       })
 
       // Llamada a la API para solicitar restablecimiento
-      const response = await axios.post("https://gitbf.onrender.com/api/auth/request-password-reset", {
+      const response = await axios.post("https://luxurysoftbackendapi.onrender.com/api/auth/request-password-reset", {
         email: formData.email.trim(),
       })
 

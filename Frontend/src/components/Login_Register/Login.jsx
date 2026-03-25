@@ -95,7 +95,7 @@ export default function Login() {
 
 //     try {
 //       const response = await axios.post(
-//         "https://gitbf.onrender.com/api/auth/login",
+//         "https://luxurysoftbackendapi.onrender.com/api/auth/login",
 //         { email, password }
 //       );
 //       const { token, role, user } = response.data;
@@ -163,7 +163,7 @@ const handleLogin = async (e) => {
 
   try {
     const response = await axios.post(
-      "https://gitbf.onrender.com/api/auth/login",
+      "https://luxurysoftbackendapi.onrender.com/api/auth/login",
       { email, password }
     );
 //  console.log("Respuesta completa del backend:", response.data); // 👈 Verifica esto
@@ -318,7 +318,7 @@ const handleLogin = async (e) => {
               className="logo-container-login"
             >
               <img
-                src="https://gitbf.onrender.com/uploads/LogoLogin.webp"
+                src="https://luxurysoftbackendapi.onrender.com/uploads/LogoLogin.webp"
                 alt="SPA Y BELLEZA"
                 className="logo-image-login"
               />

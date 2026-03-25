@@ -187,7 +187,7 @@ const Sidebar = () => {
             >
               <div className="logo-wrapper">
                 <img
-                  src="https://gitbf.onrender.com/uploads/logo1Navbar.webp"
+                  src="https://luxurysoftbackendapi.onrender.com/uploads/logo1Navbar.webp"
                   alt="NailsSoft Logo"
                   className="logo-image"
                   loading="lazy"

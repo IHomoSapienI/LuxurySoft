@@ -8,7 +8,7 @@ const FormularioCategoriaProducto = ({ categoriaId, onClose }) => {
   const [nombreCp, setNombreCp] = useState("")
   const [descripcionCp, setDescripcionCp] = useState("")
   const [activo, setActivo] = useState(true)
-  const apiUrl = "https://gitbf.onrender.com/api/categoriaproductos"
+  const apiUrl = "https://luxurysoftbackendapi.onrender.com/api/categoriaproductos"
 
   // Estados para errores de validación
   const [errores, setErrores] = useState({

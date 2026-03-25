@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:mobile/models/usuario.dart';
 
 class ApiUsuario {
-  static const String baseUrl = "https://gitbf.onrender.com/api/usuarios";
+  static const String baseUrl = "https://luxurysoftbackendapi.onrender.com/api/usuarios";
 
   // Método para obtener los usuarios (GET)
   Future<List<Usuario>> getUsuarios(String token) async {

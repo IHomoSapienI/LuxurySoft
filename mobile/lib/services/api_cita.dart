@@ -4,7 +4,7 @@ import 'package:mobile/models/cita.dart';
 import 'package:intl/intl.dart';
 
 class ApiCita {
-  static const String baseUrl = "https://gitbf.onrender.com/api/citas";
+  static const String baseUrl = "https://luxurysoftbackendapi.onrender.com/api/citas";
 
   // Método para obtener todas las citas
   Future<List<Cita>> getCitas(String token, {

@@ -116,8 +116,8 @@ if (
   try {
     const token = localStorage.getItem("token");
     const url = tipoServicioSeleccionado
-      ? `https://gitbf.onrender.com/api/tiposervicios/${tipoServicioSeleccionado._id}`
-      : "https://gitbf.onrender.com/api/tiposervicios";
+      ? `https://luxurysoftbackendapi.onrender.com/api/tiposervicios/${tipoServicioSeleccionado._id}`
+      : "https://luxurysoftbackendapi.onrender.com/api/tiposervicios";
     const method = tipoServicioSeleccionado ? "PUT" : "POST";
 
     const response = await fetch(url, {

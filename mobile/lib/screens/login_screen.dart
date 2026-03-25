@@ -179,7 +179,7 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
     // Agregar vibración táctil
     HapticFeedback.lightImpact();
 
-    const String url = 'https://gitbf.onrender.com/api/auth/login';
+    const String url = 'https://luxurysoftbackendapi.onrender.com/api/auth/login';
     try {
       final response = await http.post(
         Uri.parse(url),

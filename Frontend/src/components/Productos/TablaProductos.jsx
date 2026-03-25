@@ -55,7 +55,7 @@ const TablaProductos = () => {
         return
       }
 
-      const respuesta = await axios.get("https://gitbf.onrender.com/api/productos", {
+      const respuesta = await axios.get("https://luxurysoftbackendapi.onrender.com/api/productos", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -116,7 +116,7 @@ const TablaProductos = () => {
           return
         }
 
-        await axios.delete(`https://gitbf.onrender.com/api/productos/${id}`, {
+        await axios.delete(`https://luxurysoftbackendapi.onrender.com/api/productos/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -173,7 +173,7 @@ const TablaProductos = () => {
           estado: nuevoEstado,
         }
 
-        await axios.put(`https://gitbf.onrender.com/api/productos/${id}`, productoActualizado, {
+        await axios.put(`https://luxurysoftbackendapi.onrender.com/api/productos/${id}`, productoActualizado, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

@@ -95,7 +95,7 @@ const serviciosPost = async (req, res = response) => {
   }
 
   const { nombreServicio, descripcion, precio, tiempo, tipoServicio, tipoServicio2, estado } = value;
-  const imagenUrl = `https://gitbf.onrender.com/uploads/${req.file.filename}`; // nombre del archivo guardado
+  const imagenUrl = `https://luxurysoftbackendapi.onrender.com/uploads/${req.file.filename}`; // nombre del archivo guardado
 
   try {
     // Verificar que tipoServicio(s) existan en DB

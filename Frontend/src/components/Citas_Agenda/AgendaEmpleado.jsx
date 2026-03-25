@@ -436,7 +436,7 @@ const AgendaEmpleado = () => {
       }
 
       const headers = { Authorization: `Bearer ${token}` }
-      const respuesta = await axios.get("https://gitbf.onrender.com/api/empleados", { headers })
+      const respuesta = await axios.get("https://luxurysoftbackendapi.onrender.com/api/empleados", { headers })
 
       if (!respuesta.data || !Array.isArray(respuesta.data)) {
         throw new Error("Formato de respuesta inválido")
@@ -466,7 +466,7 @@ const AgendaEmpleado = () => {
       }
 
       const headers = { Authorization: `Bearer ${token}` }
-      const respuesta = await axios.get("https://gitbf.onrender.com/api/citas", { headers })
+      const respuesta = await axios.get("https://luxurysoftbackendapi.onrender.com/api/citas", { headers })
 
       if (!respuesta.data || !respuesta.data.citas) {
         throw new Error("Formato de respuesta inválido")
@@ -651,7 +651,7 @@ const AgendaEmpleado = () => {
       })
 
       const headers = { Authorization: `Bearer ${token}` }
-      const respuesta = await axios.get("https://gitbf.onrender.com/api/ventaservicios", { headers })
+      const respuesta = await axios.get("https://luxurysoftbackendapi.onrender.com/api/ventaservicios", { headers })
 
       if (!respuesta.data || !respuesta.data.ventaservicios) {
         Swal.close()

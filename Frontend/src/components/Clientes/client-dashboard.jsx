@@ -473,7 +473,7 @@ useEffect(() => {
       // Fix the API endpoint URL to match your backend route
       // The correct endpoint should be /api/citas/{id}/cancelar
       await axios.put(
-        `https://gitbf.onrender.com/api/citas/${citaId}/cancelar`,
+        `https://luxurysoftbackendapi.onrender.com/api/citas/${citaId}/cancelar`,
         {
           motivo: motivoCancelacion,
           horarioLiberado: true, // Asegurar que el horario se libere
@@ -617,7 +617,7 @@ console.log("Usuario recibido en fetchData:", user);
     if (!userData) {
       try {
         const usuarioResponse = await axios.get(
-          `https://gitbf.onrender.com/api/usuarios/${userId}`,
+          `https://luxurysoftbackendapi.onrender.com/api/usuarios/${userId}`,
           { headers }
         );
         const rawUserData = usuarioResponse.data;
@@ -642,7 +642,7 @@ console.log("Usuario recibido en fetchData:", user);
 
     // 2. Obtener y filtrar citas
     try {
-      const citasResponse = await axios.get(`https://gitbf.onrender.com/api/citas`, { headers });
+      const citasResponse = await axios.get(`https://luxurysoftbackendapi.onrender.com/api/citas`, { headers });
       const todasLasCitas = citasResponse.data.citas || citasResponse.data || [];
 
       const correoUsuario = userData?.correo || userEmail;
@@ -693,7 +693,7 @@ console.log("Usuario recibido en fetchData:", user);
 
     // 3. Obtener y filtrar ventas
     try {
-      const ventasResponse = await axios.get(`https://gitbf.onrender.com/api/ventas`, { headers });
+      const ventasResponse = await axios.get(`https://luxurysoftbackendapi.onrender.com/api/ventas`, { headers });
       const todasLasVentas = ventasResponse.data.ventas || ventasResponse.data || [];
 
       const correoUsuario = userData?.correo || userEmail;

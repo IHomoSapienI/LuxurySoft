@@ -35,8 +35,8 @@ const FormularioServicio = ({
       setIsLoading(true);
       try {
         const [res1, res2] = await Promise.all([
-          axios.get("https://gitbf.onrender.com/api/tiposervicios"),
-          axios.get("https://gitbf.onrender.com/api/tiposervicioss"),
+          axios.get("https://luxurysoftbackendapi.onrender.com/api/tiposervicios"),
+          axios.get("https://luxurysoftbackendapi.onrender.com/api/tiposervicioss"),
         ]);
 
         setTiposServicios(res1.data.tiposervicios || []);
@@ -77,7 +77,7 @@ const FormularioServicio = ({
       // Si hay una imagen existente, mostrarla en la vista previa
       if (servicioSeleccionado.imagenUrl) {
         setPreviewImage(
-          `https://gitbf.onrender.com/uploads/${servicioSeleccionado.imagenUrl}`
+          `https://luxurysoftbackendapi.onrender.com/uploads/${servicioSeleccionado.imagenUrl}`
         );
       }
     }
@@ -130,7 +130,7 @@ const FormularioServicio = ({
     try {
       const token = localStorage.getItem("token");
       const response = await axios.get(
-        `https://gitbf.onrender.com/api/servicios/validar-nombre?nombre=${encodeURIComponent(
+        `https://luxurysoftbackendapi.onrender.com/api/servicios/validar-nombre?nombre=${encodeURIComponent(
           nombre
         )}`,
         {
@@ -311,7 +311,7 @@ const FormularioServicio = ({
       let response;
       if (servicioSeleccionado) {
         response = await axios.put(
-          `https://gitbf.onrender.com/api/servicios/${servicioSeleccionado._id}`,
+          `https://luxurysoftbackendapi.onrender.com/api/servicios/${servicioSeleccionado._id}`,
           data,
           {
             headers: {
@@ -322,7 +322,7 @@ const FormularioServicio = ({
         );
       } else {
         response = await axios.post(
-          "https://gitbf.onrender.com/api/servicios",
+          "https://luxurysoftbackendapi.onrender.com/api/servicios",
           data,
           {
             headers: {

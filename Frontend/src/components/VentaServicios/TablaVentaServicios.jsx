@@ -29,7 +29,7 @@ const TablaVentaServicios = () => {
     setIsLoading(true)
     try {
       const token = localStorage.getItem("token")
-      const response = await axios.get("https://gitbf.onrender.com/api/ventaservicios", {
+      const response = await axios.get("https://luxurysoftbackendapi.onrender.com/api/ventaservicios", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -69,14 +69,14 @@ const TablaVentaServicios = () => {
       const token = localStorage.getItem("token")
       let response
       if (ventaId) {
-        response = await axios.put(`https://gitbf.onrender.com/api/ventaservicios/${ventaId}`, ventaData, {
+        response = await axios.put(`https://luxurysoftbackendapi.onrender.com/api/ventaservicios/${ventaId}`, ventaData, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         })
         await Swal.fire("Actualizado!", "La venta ha sido actualizada.", "success")
       } else {
-        response = await axios.post("https://gitbf.onrender.com/api/ventaservicios", ventaData, {
+        response = await axios.post("https://luxurysoftbackendapi.onrender.com/api/ventaservicios", ventaData, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -110,7 +110,7 @@ const TablaVentaServicios = () => {
       setIsProcessing(true)
       try {
         const token = localStorage.getItem("token")
-        await axios.delete(`https://gitbf.onrender.com/api/ventaservicios/${idVenta}`, {
+        await axios.delete(`https://luxurysoftbackendapi.onrender.com/api/ventaservicios/${idVenta}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

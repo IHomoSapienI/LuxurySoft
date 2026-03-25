@@ -50,7 +50,7 @@ const TablaEmpleados = () => {
         return
       }
 
-      const respuesta = await axios.get("https://gitbf.onrender.com/api/empleados", {
+      const respuesta = await axios.get("https://luxurysoftbackendapi.onrender.com/api/empleados", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -101,7 +101,7 @@ const TablaEmpleados = () => {
       try {
         const token = localStorage.getItem("token")
         await axios.patch(
-          `https://gitbf.onrender.com/api/empleados/${id}/toggle-estado`,
+          `https://luxurysoftbackendapi.onrender.com/api/empleados/${id}/toggle-estado`,
           {},
           {
             headers: {
@@ -154,7 +154,7 @@ const TablaEmpleados = () => {
     if (result.isConfirmed) {
       try {
         const token = localStorage.getItem("token")
-        await axios.delete(`https://gitbf.onrender.com/api/empleados/${id}`, {
+        await axios.delete(`https://luxurysoftbackendapi.onrender.com/api/empleados/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

@@ -34,15 +34,15 @@ const DashboardStats = () => {
         const headers = { Authorization: `Bearer ${token}` }
 
         // Obtener datos de citas
-        const citasResponse = await axios.get("https://gitbf.onrender.com/api/citas", { headers })
+        const citasResponse = await axios.get("https://luxurysoftbackendapi.onrender.com/api/citas", { headers })
         const citas = citasResponse.data.citas || []
 
         // Obtener datos de ventas
-        const ventasResponse = await axios.get("https://gitbf.onrender.com/api/ventas", { headers })
+        const ventasResponse = await axios.get("https://luxurysoftbackendapi.onrender.com/api/ventas", { headers })
         const ventas = ventasResponse.data.ventas || []
 
         // Obtener datos de clientes
-        const clientesResponse = await axios.get("https://gitbf.onrender.com/api/clientes", { headers })
+        const clientesResponse = await axios.get("https://luxurysoftbackendapi.onrender.com/api/clientes", { headers })
         const clientes = clientesResponse.data || []
 
         // Debug: Mostrar estructura de clientes

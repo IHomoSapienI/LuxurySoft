@@ -21,10 +21,10 @@ const FormularioVentaProducto = ({ venta, onGuardar, onCancelar }) => {
         try {
             const token = localStorage.getItem('token');
             const [clientesResponse, productosResponse] = await Promise.all([
-                axios.get('https://gitbf.onrender.com/api/clientes', {
+                axios.get('https://luxurysoftbackendapi.onrender.com/api/clientes', {
                     headers: { 'Authorization': `Bearer ${token}` }
                 }),
-                axios.get('https://gitbf.onrender.com/api/productos', {
+                axios.get('https://luxurysoftbackendapi.onrender.com/api/productos', {
                     headers: { 'Authorization': `Bearer ${token}` }
                 })
             ]);

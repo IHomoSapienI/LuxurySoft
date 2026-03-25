@@ -48,7 +48,7 @@ const Footer = () => {
             transition={{ duration: 0.5 }}
             className="footer-section"
           >
-            <img src="https://gitbf.onrender.com/uploads/Logo1_Fotter.webp" alt="NailsSoft Logo" className="footer-logo" />
+            <img src="https://luxurysoftbackendapi.onrender.com/uploads/Logo1_Fotter.webp" alt="NailsSoft Logo" className="footer-logo" />
             <h2 className="footer-brand">NailsSoft</h2>
             <p className="footer-description">
               Transformando la gestión de salones de belleza con tecnología innovadora y experiencias únicas.

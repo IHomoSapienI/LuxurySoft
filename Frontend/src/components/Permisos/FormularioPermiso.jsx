@@ -46,7 +46,7 @@ const FormularioPermiso = ({ permisoSeleccionado, editMode, onClose, onPermisoCr
 
       if (editMode && permisoSeleccionado) {
         // Actualizar permiso existente
-        response = await axios.put(`https://gitbf.onrender.com/api/permisos/${permisoSeleccionado._id}`, formData, {
+        response = await axios.put(`https://luxurysoftbackendapi.onrender.com/api/permisos/${permisoSeleccionado._id}`, formData, {
           headers: {
             Authorization: `Bearer ${token}`,
             "Content-Type": "application/json",
@@ -63,7 +63,7 @@ const FormularioPermiso = ({ permisoSeleccionado, editMode, onClose, onPermisoCr
         // console.log("Datos enviados:", formData)
 
         // Crear nuevo permiso
-        response = await axios.post("https://gitbf.onrender.com/api/permisos", formData, 
+        response = await axios.post("https://luxurysoftbackendapi.onrender.com/api/permisos", formData, 
           {
           headers: {
             Authorization: `Bearer ${token}`,

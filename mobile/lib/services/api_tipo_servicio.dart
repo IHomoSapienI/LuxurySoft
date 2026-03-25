@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:mobile/models/tipo_servicio.dart';
 
 class ApiTipoServicio {
-  static const String baseUrl = "https://gitbf.onrender.com/api/tiposervicios";
+  static const String baseUrl = "https://luxurysoftbackendapi.onrender.com/api/tiposervicios";
 
   Future<List<TipoServicio>> getTipoServicios() async {
     final response = await http.get(

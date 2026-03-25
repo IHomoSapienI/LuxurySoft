@@ -9,7 +9,7 @@ const ProductsGrid = () => {
   useEffect(() => {
     const obtenerProductos = async () => {
       try {
-        const response = await axios.get('https://gitbf.onrender.com/api/productos');  // Cambiamos la URL para productos
+        const response = await axios.get('https://luxurysoftbackendapi.onrender.com/api/productos');  // Cambiamos la URL para productos
         setProductos(response.data.productos);
       } catch (error) {
         console.error('Error al obtener los productos:', error);
@@ -19,7 +19,7 @@ const ProductsGrid = () => {
     obtenerProductos();
   }, []);
 
-  const baseUrl = 'https://gitbf.onrender.com/uploads'; // URL base para las imágenes
+  const baseUrl = 'https://luxurysoftbackendapi.onrender.com/uploads'; // URL base para las imágenes
 
   // Función para manejar el clic y redirigir a la página de detalle de producto
   const manejarClickProducto = (producto) => {

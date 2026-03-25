@@ -214,7 +214,7 @@ export default function VerifyToken() {
       // Mostrar alerta de carga
       const loadingAlert = showLoadingAlert()
 
-      const response = await axios.post("https://gitbf.onrender.com/api/auth/verify-reset-token", {
+      const response = await axios.post("https://luxurysoftbackendapi.onrender.com/api/auth/verify-reset-token", {
         token: tokenString,
         email,
       })

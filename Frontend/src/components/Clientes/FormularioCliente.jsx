@@ -128,8 +128,8 @@ const FormularioCliente = ({ cliente, onClose, onClienteActualizado = () => {} }
     try {
       const token = localStorage.getItem("token")
       const url = cliente
-        ? `https://gitbf.onrender.com/api/clientes/${cliente._id}`
-        : "https://gitbf.onrender.com/api/clientes"
+        ? `https://luxurysoftbackendapi.onrender.com/api/clientes/${cliente._id}`
+        : "https://luxurysoftbackendapi.onrender.com/api/clientes"
       const method = cliente ? "PUT" : "POST"
 
       const response = await fetch(url, {

@@ -131,7 +131,7 @@ export default function FormularioUsuario({ onClose, onUsuarioActualizado, usuar
     try {
       setFetchingCurrentUser(true)
       const token = localStorage.getItem("token")
-      const response = await axios.get(`https://gitbf.onrender.com/api/usuarios/${userId}`, {
+      const response = await axios.get(`https://luxurysoftbackendapi.onrender.com/api/usuarios/${userId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -217,7 +217,7 @@ export default function FormularioUsuario({ onClose, onUsuarioActualizado, usuar
         // Actualizar primero los datos básicos
         await axios({
           method: "PUT",
-          url: `https://gitbf.onrender.com/api/usuarios/${usuarioEditando._id}`,
+          url: `https://luxurysoftbackendapi.onrender.com/api/usuarios/${usuarioEditando._id}`,
           data: basicUpdateData,
           headers: {
             "Content-Type": "application/json",
@@ -235,7 +235,7 @@ export default function FormularioUsuario({ onClose, onUsuarioActualizado, usuar
 
         await axios({
           method: "PUT",
-          url: `https://gitbf.onrender.com/api/usuarios/${usuarioEditando._id}/update-rol`,
+          url: `https://luxurysoftbackendapi.onrender.com/api/usuarios/${usuarioEditando._id}/update-rol`,
           data: rolUpdateData,
           headers: {
             "Content-Type": "application/json",
@@ -297,8 +297,8 @@ export default function FormularioUsuario({ onClose, onUsuarioActualizado, usuar
 
       // Usar axios para la solicitud
       const url = usuarioEditando
-        ? `https://gitbf.onrender.com/api/usuarios/${usuarioEditando._id}`
-        : "https://gitbf.onrender.com/api/usuarios"
+        ? `https://luxurysoftbackendapi.onrender.com/api/usuarios/${usuarioEditando._id}`
+        : "https://luxurysoftbackendapi.onrender.com/api/usuarios"
 
       const response = await axios({
         method: usuarioEditando ? "PUT" : "POST",

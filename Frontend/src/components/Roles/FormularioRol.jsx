@@ -46,7 +46,7 @@
 //       const token = localStorage.getItem("token");
 //       if (!token) throw new Error("No se encontró token");
 
-//       const response = await fetch("https://gitbf.onrender.com/api/permisos", {
+//       const response = await fetch("https://luxurysoftbackendapi.onrender.com/api/permisos", {
 //         headers: {
 //           Authorization: `Bearer ${token}`,
 //           "Content-Type": "application/json",
@@ -142,8 +142,8 @@
 //     if (!token) throw new Error("No se encontró token de autenticación");
 
 //     const url = modoEdicion
-//       ? `https://gitbf.onrender.com/api/roles/${rolSeleccionado._id}`
-//       : "https://gitbf.onrender.com/api/roles";
+//       ? `https://luxurysoftbackendapi.onrender.com/api/roles/${rolSeleccionado._id}`
+//       : "https://luxurysoftbackendapi.onrender.com/api/roles";
 
 //     const metodo = modoEdicion ? "PUT" : "POST";
 
@@ -418,7 +418,7 @@ const FormularioRol = ({ rolSeleccionado, onRolActualizado, onClose }) => {
         if (!token) throw new Error("No se encontró token");
 
         const response = await fetch(
-          "https://gitbf.onrender.com/api/permisos",
+          "https://luxurysoftbackendapi.onrender.com/api/permisos",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -518,8 +518,8 @@ const FormularioRol = ({ rolSeleccionado, onRolActualizado, onClose }) => {
       if (!token) throw new Error("No se encontró token de autenticación");
 
       const url = modoEdicion
-        ? `https://gitbf.onrender.com/api/roles/${rolSeleccionado._id}`
-        : "https://gitbf.onrender.com/api/roles";
+        ? `https://luxurysoftbackendapi.onrender.com/api/roles/${rolSeleccionado._id}`
+        : "https://luxurysoftbackendapi.onrender.com/api/roles";
 
       const metodo = modoEdicion ? "PUT" : "POST";
 

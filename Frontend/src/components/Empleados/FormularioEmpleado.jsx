@@ -129,8 +129,8 @@ const FormularioEmpleado = ({ empleado, onClose, onEmpleadoActualizado = () => {
     try {
       const token = localStorage.getItem("token")
       const url = empleado
-        ? `https://gitbf.onrender.com/api/empleados/${empleado._id}`
-        : "https://gitbf.onrender.com/api/empleados"
+        ? `https://luxurysoftbackendapi.onrender.com/api/empleados/${empleado._id}`
+        : "https://luxurysoftbackendapi.onrender.com/api/empleados"
       const method = empleado ? "PUT" : "POST"
 
       const response = await fetch(url, {

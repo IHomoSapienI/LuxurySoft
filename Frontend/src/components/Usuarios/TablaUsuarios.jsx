@@ -50,7 +50,7 @@ const TablaUsuarios = () => {
 
       // Primero obtener los roles para asegurar que estén disponibles
       const rolesResponse = await fetch(
-        "https://gitbf.onrender.com/api/roles",
+        "https://luxurysoftbackendapi.onrender.com/api/roles",
         {
           method: "GET",
           headers: {
@@ -81,7 +81,7 @@ const TablaUsuarios = () => {
 
       // Luego obtener los usuarios
       const usuariosResponse = await fetch(
-        "https://gitbf.onrender.com/api/usuarios",
+        "https://luxurysoftbackendapi.onrender.com/api/usuarios",
         {
           method: "GET",
           headers: {
@@ -164,7 +164,7 @@ const TablaUsuarios = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await fetch(
-          `https://gitbf.onrender.com/api/usuarios/${id}`,
+          `https://luxurysoftbackendapi.onrender.com/api/usuarios/${id}`,
           {
             method: "DELETE",
             headers: {
@@ -222,7 +222,7 @@ const TablaUsuarios = () => {
 
         const token = localStorage.getItem("token");
         const response = await axios.patch(
-          `https://gitbf.onrender.com/api/usuarios/${id}/toggle-estado`,
+          `https://luxurysoftbackendapi.onrender.com/api/usuarios/${id}/toggle-estado`,
           {},
           {
             headers: {

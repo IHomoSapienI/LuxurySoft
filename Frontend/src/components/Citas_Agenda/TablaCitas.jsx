@@ -405,7 +405,7 @@ const TablaCitas = () => {
     try {
       const token = localStorage.getItem("token")
       const headers = { Authorization: `Bearer ${token}` }
-      const respuesta = await axios.get("https://gitbf.onrender.com/api/empleados", { headers })
+      const respuesta = await axios.get("https://luxurysoftbackendapi.onrender.com/api/empleados", { headers })
       console.log("📋 Empleados obtenidos:", respuesta.data)
       setEmpleados(respuesta.data)
     } catch (error) {
@@ -425,7 +425,7 @@ const TablaCitas = () => {
     try {
       const token = localStorage.getItem("token")
       const headers = { Authorization: `Bearer ${token}` }
-      const respuesta = await axios.get("https://gitbf.onrender.com/api/citas", { headers })
+      const respuesta = await axios.get("https://luxurysoftbackendapi.onrender.com/api/citas", { headers })
 
       console.log("📅 Respuesta completa de la API:", respuesta.data)
       console.log("📅 Primeras 3 citas para análisis:", respuesta.data.citas?.slice(0, 3))

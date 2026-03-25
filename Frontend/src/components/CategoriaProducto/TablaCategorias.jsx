@@ -53,7 +53,7 @@ const TablaCategorias = () => {
 
     try {
       const respuesta = await axios.get(
-        "https://gitbf.onrender.com/api/categoriaproductos",
+        "https://luxurysoftbackendapi.onrender.com/api/categoriaproductos",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -123,7 +123,7 @@ const TablaCategorias = () => {
 
       try {
         await axios.delete(
-          `https://gitbf.onrender.com/api/categoriaproductos/${id}`,
+          `https://luxurysoftbackendapi.onrender.com/api/categoriaproductos/${id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -183,7 +183,7 @@ const TablaCategorias = () => {
         };
 
         await axios.put(
-          `https://gitbf.onrender.com/api/categoriaproductos/${id}`,
+          `https://luxurysoftbackendapi.onrender.com/api/categoriaproductos/${id}`,
           categoriaActualizada,
           {
             headers: {

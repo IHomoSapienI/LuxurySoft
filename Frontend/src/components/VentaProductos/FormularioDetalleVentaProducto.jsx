@@ -8,7 +8,7 @@ const DetalleVentaProducto = ({ ventaId, onClose }) => {
     useEffect(() => {
         const fetchDetalleVenta = async () => {
             try {
-                const response = await axios.get(`https://gitbf.onrender.com/api/ventaproductos/${ventaId}`);
+                const response = await axios.get(`https://luxurysoftbackendapi.onrender.com/api/ventaproductos/${ventaId}`);
                 setVenta(response.data);
             } catch (error) {
                 console.error('Error al obtener los detalles de la venta:', error);

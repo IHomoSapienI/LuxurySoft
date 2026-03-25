@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:mobile/models/venta.dart';
 
 class ApiVenta {
-  static const String baseUrl = "https://gitbf.onrender.com/api/ventas";
+  static const String baseUrl = "https://luxurysoftbackendapi.onrender.com/api/ventas";
 
   Future<List<Venta>> getVentas(String token) async {
     final response = await http.get(

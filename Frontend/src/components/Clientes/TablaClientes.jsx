@@ -52,7 +52,7 @@ const TablaClientes = () => {
       }
 
       const respuesta = await axios.get(
-        "https://gitbf.onrender.com/api/clientes",
+        "https://luxurysoftbackendapi.onrender.com/api/clientes",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -103,7 +103,7 @@ const TablaClientes = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.patch(
-        `https://gitbf.onrender.com/api/clientes/${id}/toggle-estado`,
+        `https://luxurysoftbackendapi.onrender.com/api/clientes/${id}/toggle-estado`,
         {},
         {
           headers: {
@@ -160,7 +160,7 @@ const TablaClientes = () => {
     if (result.isConfirmed) {
       try {
         const token = localStorage.getItem("token");
-        await axios.delete(`https://gitbf.onrender.com/api/clientes/${id}`, {
+        await axios.delete(`https://luxurysoftbackendapi.onrender.com/api/clientes/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

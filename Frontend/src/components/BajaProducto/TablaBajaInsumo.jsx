@@ -34,7 +34,7 @@ const TablaBajaInsumo = () => {
         return
       }
 
-      const response = await axios.get("https://gitbf.onrender.com/api/baja-productos", {
+      const response = await axios.get("https://luxurysoftbackendapi.onrender.com/api/baja-productos", {
         headers: { Authorization: `Bearer ${token}` },
       })
 

@@ -199,7 +199,7 @@ const TablaServicios = () => {
       const token = localStorage.getItem("token");
       
       // 🔴 Acá estaba el error: no estabas guardando la respuesta
-      const response = await fetch(`https://gitbf.onrender.com/api/servicios/${id}`, {
+      const response = await fetch(`https://luxurysoftbackendapi.onrender.com/api/servicios/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -254,7 +254,7 @@ const TablaServicios = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await fetch(
-          `https://gitbf.onrender.com/api/servicios/${id}/toggle-estado`,
+          `https://luxurysoftbackendapi.onrender.com/api/servicios/${id}/toggle-estado`,
           {
             method: "PATCH",
             headers: {
@@ -318,7 +318,7 @@ const TablaServicios = () => {
 
       // Realizar la solicitud para exportar a Excel
       const response = await fetch(
-        "https://gitbf.onrender.com/api/servicios/export-excel",
+        "https://luxurysoftbackendapi.onrender.com/api/servicios/export-excel",
         {
           method: "GET",
           headers: {

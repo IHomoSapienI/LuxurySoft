@@ -21,7 +21,7 @@ const FormularioInsumo = ({ insumo, onClose, onSuccess }) => {
   })
   const [modoEdicion, setModoEdicion] = useState(false)
 
-  const apiUrl = "https://gitbf.onrender.com/api/insumos"
+  const apiUrl = "https://luxurysoftbackendapi.onrender.com/api/insumos"
 
   // Funciones de validación del lado del cliente
   const validarNombreInsumo = (nombre) => {

@@ -104,8 +104,8 @@ export default function FormularioTipoServicios({ tipoServicioSeleccionado, onTi
   try {
     const token = localStorage.getItem("token")
     const url = tipoServicioSeleccionado
-      ? `https://gitbf.onrender.com/api/tiposervicioss/${tipoServicioSeleccionado._id}`
-      : "https://gitbf.onrender.com/api/tiposervicioss"
+      ? `https://luxurysoftbackendapi.onrender.com/api/tiposervicioss/${tipoServicioSeleccionado._id}`
+      : "https://luxurysoftbackendapi.onrender.com/api/tiposervicioss"
 
     const method = tipoServicioSeleccionado ? "PUT" : "POST"
 

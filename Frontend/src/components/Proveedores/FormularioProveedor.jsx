@@ -25,7 +25,7 @@ const FormularioProveedor = ({ proveedor, onProveedorActualizado, onClose }) => 
   })
   const [modoEdicion, setModoEdicion] = useState(false)
 
-  const apiUrl = "https://gitbf.onrender.com/api/proveedores"
+  const apiUrl = "https://luxurysoftbackendapi.onrender.com/api/proveedores"
 
   // Funciones de validación del lado del cliente
   const validarNombreProveedor = (nombre) => {

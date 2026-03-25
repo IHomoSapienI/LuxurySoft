@@ -21,7 +21,7 @@ const TablaVentaProductos = () => {
     const fetchVentas = async () => {
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.get('https://gitbf.onrender.com/api/ventaproductos', {
+            const response = await axios.get('https://luxurysoftbackendapi.onrender.com/api/ventaproductos', {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -54,10 +54,10 @@ const TablaVentaProductos = () => {
 
             let response;
             if (ventaId) {
-                response = await axios.put(`https://gitbf.onrender.com/api/ventaproductos/${ventaId}`, ventaData, config);
+                response = await axios.put(`https://luxurysoftbackendapi.onrender.com/api/ventaproductos/${ventaId}`, ventaData, config);
                 await Swal.fire('Actualizado!', 'La venta ha sido actualizada.', 'success');
             } else {
-                response = await axios.post('https://gitbf.onrender.com/api/ventaproductos', ventaData, config);
+                response = await axios.post('https://luxurysoftbackendapi.onrender.com/api/ventaproductos', ventaData, config);
                 await Swal.fire('Agregado!', 'La venta ha sido agregada.', 'success');
             }
 
@@ -86,7 +86,7 @@ const TablaVentaProductos = () => {
             try {
                 const token = localStorage.getItem('token'); // Obtener el token
                 // console.log("Token para eliminación:", token); // Verifica que el token sea correcto
-                const response = await axios.delete(`https://gitbf.onrender.com/api/ventaproductos/${idVenta}`, {
+                const response = await axios.delete(`https://luxurysoftbackendapi.onrender.com/api/ventaproductos/${idVenta}`, {
                     headers: {
                         'Authorization': `Bearer ${token}` // Enviar el token en el encabezado
                     }
